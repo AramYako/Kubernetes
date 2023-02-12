@@ -27,9 +27,13 @@
        <ul>
         <li><a href="#pods-api-imperative">Pods Api Imperative</a></li>
       </ul>
+       <ul>
+        <li><a href="#pods-api-declarative">Pods api Declarative</a></li>
+      </ul>
     </li>
   </ol>
 </details>
+
 
 ## Kubernetes Locally
 
