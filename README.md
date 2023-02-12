@@ -42,8 +42,14 @@
       </ul>
     </li>
   </ol>
+    <ol>
+    <li>
+      <a href="#probe">Probe</a>
+      <ul>
+        <li> <a href="#liveness-and-readiness-probe">Liveness and Readiness probe</a></li>
+      </ul>
+    </li>
 </details>
-
 
 ## Kubernetes Locally
 
@@ -105,4 +111,12 @@ Describe pod: kubectl describe pod <pod-name>
 ```
 
 ![image](https://user-images.githubusercontent.com/29054168/218318499-a4dafa41-b6f3-48c7-8d8d-56560d1200e5.png)
+
+
+## Probe
+
+### Liveness and Readiness probe
+
+![image](https://user-images.githubusercontent.com/29054168/218322682-c0db390a-28c5-44cf-be04-dcb09f920771.png)
+
 
