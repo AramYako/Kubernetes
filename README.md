@@ -44,6 +44,7 @@ OBS: We dont use minikube anymore
 ### Docker Desktop
 
 - **Recommeded way**
+- Set alias Set-Alias -Name k -Value kubectl
 
 Use docker desktop with kubernetes enabled. The ip address will be localhost instead of minikube ip address
 
