@@ -1,13 +1,20 @@
 # to run this yaml file and create the resouse
 # kubectl apply -f nginx.pod.yml --validate=true
-kubernetes apiVersion: v1
+# Delete resources from file: kubeclt delete -f nginx.pod.yml
+apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-pod-yaml
+  labels:
+    name: nginx
+    rel: stable2
 spec:
   containers:
   - name: nginx-pod-yaml
     image: nginx:alpine
     resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
     ports:
       - containerPort: 80
