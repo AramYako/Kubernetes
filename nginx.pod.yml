@@ -1,0 +1,13 @@
+# to run this yaml file and create the resouse
+# kubectl apply -f nginx.pod.yml --validate=true
+kubernetes apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-yaml
+spec:
+  containers:
+  - name: nginx-pod-yaml
+    image: nginx:alpine
+    resources:
+    ports:
+      - containerPort: 80
