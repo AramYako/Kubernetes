@@ -152,6 +152,10 @@ Describe pod: kubectl describe pod <pod-name>
 ### Deployments
   
   ![image](https://user-images.githubusercontent.com/29054168/218337803-0e8abd53-6a1e-4c5e-a52c-99f40b1d8375.png)
+  
+  
+  * Declarative updates for Pods and ReplicaSets.
+  * Declare desire state  
 
 
 
