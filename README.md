@@ -27,9 +27,13 @@
        <ul>
         <li><a href="#pods-api-imperative">Pods Api Imperative</a></li>
       </ul>
+       <ul>
+        <li><a href="#pods-api-declarative">Pods api Declarative</a></li>
+      </ul>
     </li>
   </ol>
 </details>
+
 
 ## Kubernetes Locally
 
@@ -72,6 +76,12 @@ Use docker desktop with kubernetes enabled. The ip address will be localhost ins
 Create pods nginx image Imperative:        kubectl run <pod name> image=nginx:latest
 Get pods:                                  kubectl get pods -o wide
 Port forward, expose pod to external:      kubectl port-forward <pod-name> 8080:80
+```
+
+### Pods api Declarative
+```
+Run Yaml file 
+kubectl --apply -f <podfile>.yml --validate=true
 ```
 
 
