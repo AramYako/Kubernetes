@@ -47,6 +47,9 @@
       <a href="#probe">Probe</a>
       <ul>
         <li> <a href="#liveness-and-readiness-probe">Liveness and Readiness probe</a></li>
+        <ul>
+        <li> <a href="#liveness-configuration">Liveness Configuration</a></li>
+      </ul>
       </ul>
     </li>
 </details>
@@ -115,8 +118,16 @@ Describe pod: kubectl describe pod <pod-name>
 
 ## Probe
 
-### Liveness and Readiness probe
+## Liveness and Readiness probe
 
 ![image](https://user-images.githubusercontent.com/29054168/218322682-c0db390a-28c5-44cf-be04-dcb09f920771.png)
 
+  ### Liveness configuration
+  
+  If the liveness check fails it will kill the container and restart it. 
+  
+![image](https://user-images.githubusercontent.com/29054168/218324176-9d3c94ca-0cff-4477-adff-3a65392a47e3.png)
+
+  * periodSeconds: Specifies that the kubelet should perform a liveness probe every 5 seconds.
+  * initialDelaySeconds: Tells the kubelet that it should wait 5 seconds before performing the first probe.
 
