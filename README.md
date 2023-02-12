@@ -74,4 +74,10 @@ Get pods:                                  kubectl get pods -o wide
 Port forward, expose pod to external:      kubectl port-forward <pod-name> 8080:80
 ```
 
+### Pods api Declarative
+```
+Run Yaml file 
+kubectl --apply -f <podfile>.yml --validate=true
+```
+
 
