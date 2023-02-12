@@ -25,7 +25,7 @@
         <li><a href="#pods-ip-and-ports">Pods ip and ports</a></li>
       </ul>
        <ul>
-        <li><a href="#pods-api-commands">Pods api commands</a></li>
+        <li><a href="#pods-api-imperative">Pods Api Imperative</a></li>
       </ul>
     </li>
   </ol>
@@ -67,7 +67,7 @@ Use docker desktop with kubernetes enabled. The ip address will be localhost ins
 
 ![image](https://user-images.githubusercontent.com/29054168/218312679-cfc26b24-cc37-4775-849f-e070338103e8.png)
 
-### Pods api commands
+### Pods api Imperative
 ```
 Create pods nginx image Imperative:        kubectl run <pod name> image=nginx:latest
 Get pods:                                  kubectl get pods -o wide
