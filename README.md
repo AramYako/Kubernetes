@@ -81,7 +81,7 @@ Port forward, expose pod to external:      kubectl port-forward <pod-name> 8080:
 ### Pods api Declarative
 ```
 Run Yaml file:                       kubectl --apply -f <podfile>.yml --validate=true
-Delete resources from yaml file:     kubeclt delete -f <podfile>.yml
+Delete resources from yaml file:     kubectl delete -f <podfile>.yml
 ```
 
 
