@@ -52,6 +52,15 @@
       </ul>
       </ul>
     </li>
+    <li>
+      <a href="#deployment-and-replicaset">ReplicaSets & Deployments</a>
+      <ul>
+        <li> <a href="#replicaset">Replicasets</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#deployments">deployments</a></li>
+      </ul>
+    </li>
 </details>
 
 ## Kubernetes Locally
@@ -130,4 +139,19 @@ Describe pod: kubectl describe pod <pod-name>
 
   * periodSeconds: Specifies that the kubelet should perform a liveness probe every 5 seconds.
   * initialDelaySeconds: Tells the kubelet that it should wait 5 seconds before performing the first probe.
+  
+  
+
+## Deployment and ReplicaSet
+  
+### Replicaset
+  
+  ![image](https://user-images.githubusercontent.com/29054168/218337634-7f0d7bee-0a9a-4f80-b5a5-fc55895fd962.png)
+  
+  
+### Deployments
+  
+  ![image](https://user-images.githubusercontent.com/29054168/218337803-0e8abd53-6a1e-4c5e-a52c-99f40b1d8375.png)
+
+
 
