@@ -25,10 +25,20 @@
         <li><a href="#pods-ip-and-ports">Pods ip and ports</a></li>
       </ul>
        <ul>
-        <li><a href="#pods-api-imperative">Pods Api Imperative</a></li>
+        <li><a href="#pods-api-imperative">Pods command</a></li>
       </ul>
-       <ul>
-        <li><a href="#pods-api-declarative">Pods api Declarative</a></li>
+    </li>
+  </ol>
+  <ol>
+    <li>
+      <a href="#yaml-declarative">Kubernetes declarative YAML</a>
+    </li>
+  </ol>
+    <ol>
+    <li>
+      <a href="#monitor">Monitor & Manage</a>
+      <ul>
+        <li><a href="#describe">Describe</a></li>
       </ul>
     </li>
   </ol>
@@ -73,15 +83,26 @@ Use docker desktop with kubernetes enabled. The ip address will be localhost ins
 
 ### Pods api Imperative
 ```
-Create pods nginx image Imperative:        kubectl run <pod name> image=nginx:latest
-Get pods:                                  kubectl get pods -o wide
-Port forward, expose pod to external:      kubectl port-forward <pod-name> 8080:80
+Create pods nginx image Imperative:             kubectl run <pod name> image=nginx:latest
+Get pods:                                       kubectl get pods -o wide
+Port forward, expose pod to external:           kubectl port-forward <pod-name> 8080:80
+Access -it  of a container:                     kubectl exec <pod-name> it sh
 ```
 
-### Pods api Declarative
+## YAML Declarative
 ```
 Run Yaml file:                       kubectl --apply -f <podfile>.yml --validate=true
 Delete resources from yaml file:     kubectl delete -f <podfile>.yml
 ```
 
+
+## Monitor
+
+### Describe
+
+```
+Describe pod: kubectl describe pod <pod-name>
+```
+
+![image](https://user-images.githubusercontent.com/29054168/218318499-a4dafa41-b6f3-48c7-8d8d-56560d1200e5.png)
 
