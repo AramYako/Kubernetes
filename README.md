@@ -70,6 +70,7 @@ Use docker desktop with kubernetes enabled. The ip address will be localhost ins
 ```
 Create pods nginx image Imperative:        kubectl run <pod name> image=nginx:latest
 Get pods:                                  kubectl get pods -o wide
+Port forward, expose pod to external:      kubectl port-forward <pod-name> 8080:80
 ```
 
 
