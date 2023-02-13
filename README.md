@@ -13,6 +13,9 @@
       <ul>
         <li><a href="#docker-desktop">Docker Desktop</a></li>
       </ul>
+      <ul>
+        <li><a href="#config-context">Config Context</a></li>
+      </ul>
     </li>
   </ol>
   <ol>
@@ -23,6 +26,9 @@
       </ul>
       <ul>
         <li><a href="#pods-ip-and-ports">Pods ip and ports</a></li>
+      </ul>
+       <ul>
+        <li><a href="#multi-container-pod">Multi Container Pod</a></li>
       </ul>
        <ul>
         <li><a href="#pods-api-imperative">Pods command</a></li>
@@ -83,6 +89,12 @@ Use docker desktop with kubernetes enabled. The ip address will be localhost ins
 ![image](https://user-images.githubusercontent.com/29054168/218310611-e4901125-2990-43ef-920f-f11db306beaf.png)
 
 
+### Config context
+```
+kubectl config get-contexts
+kubectl config use-context docker-desktop
+```
+
 
 ## Pods
 
@@ -98,6 +110,14 @@ Use docker desktop with kubernetes enabled. The ip address will be localhost ins
 * Containers in a pod need to have unique ports. But containers in 2 different pods can have same port
 
 ![image](https://user-images.githubusercontent.com/29054168/218312679-cfc26b24-cc37-4775-849f-e070338103e8.png)
+
+
+### Multi container pod
+
+![image](https://user-images.githubusercontent.com/29054168/218438569-5f8c167b-d014-4e54-abfd-032154097a7d.png)
+
+* resources can communicate through localhost
+
 
 ### Pods api Imperative
 ```
