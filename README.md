@@ -116,7 +116,7 @@ kubectl config use-context docker-desktop
 
 ![image](https://user-images.githubusercontent.com/29054168/218438569-5f8c167b-d014-4e54-abfd-032154097a7d.png)
 
-* resources can communicate through localhost
+* Resources can communicate through localhost
 
 
 ### Pods api Imperative
