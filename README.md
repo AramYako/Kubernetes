@@ -177,5 +177,3 @@ Describe pod: kubectl describe pod <pod-name>
   * Declarative updates for Pods and ReplicaSets.
   * Declare desire state  
 
-
-
