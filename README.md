@@ -83,6 +83,7 @@
   
 # To Learn
   * Services, clusterip, loadbalancer, nodeportexternalname service
+  * Expose a pod clusteriå --expose
 
 ## Kubernetes Locally
 
@@ -140,6 +141,7 @@ Create pods nginx image Imperative:             kubectl run <pod name> image=ngi
 Get pods:                                       kubectl get pods -o wide
 Port forward, expose pod to external:           kubectl port-forward <pod-name> 8080:80
 Access -it  of a container:                     kubectl exec <pod-name> it sh
+Create a pod and expose it as cluster Ip in port 80: kubectl run httpd --image=httpd:alpine --port=80 --expose
 ```
 
 ## YAML Declarative
