@@ -73,6 +73,12 @@
         <li> <a href="#deployment-commands">Deployment Commands</a></li>
       </ul>
     </li>
+     <li>
+      <a href="#namespace">Namespaces</a>
+      <ul>
+        <li> <a href="#replicaset">Namespace commands</a></li>
+      </ul>
+    </li>
 </details>
 
 ## Kubernetes Locally
@@ -198,4 +204,22 @@ Edit: kubectl edit deployment <name>
 Run: kubectl apply -f 
 Scale manually: kubectl scale --replicas=3 rs/my-replicaset
 Delete: kubectl delete deployment <name>
+```
+  
+  
+##Namespace
+
+ * Default namespace: default
+ 
+### Namespace Commands
+```
+Edit: kubectl edit namespace <name>
+Run: kubectl apply -f 
+Delete: kubectl delete namespace <name>
+Get namespaces: kubectl get namespaces
+Get pods for namespace: kubeclt get pods --namespace development
+Create namespace: kubectl create namespace <name>
+Get pods in all namespaces: kubectl get pods --all-namespaces
+Set default namespace
+FQDN name service in another namespace: <service-name>.<Namespace>.svc.cluster.local
 ```
