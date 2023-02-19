@@ -80,6 +80,9 @@
       </ul>
     </li>
 </details>
+  
+# To Learn
+  * Services, clusterip, loadbalancer, nodeportexternalname service
 
 ## Kubernetes Locally
 
