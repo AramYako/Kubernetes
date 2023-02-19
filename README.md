@@ -76,7 +76,7 @@
      <li>
       <a href="#namespace">Namespaces</a>
       <ul>
-        <li> <a href="#replicaset">Namespace commands</a></li>
+        <li> <a href="#namespace-commands">Namespace commands</a></li>
       </ul>
     </li>
 </details>
