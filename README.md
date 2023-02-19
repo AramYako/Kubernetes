@@ -67,7 +67,10 @@
         <li> <a href="#deployments">deployments</a></li>
       </ul>
       <ul>
-        <li> <a href="#replicaset-commands">Replicaset commands</a></li>
+        <li> <a href="#replicaset-commands">Replicaset Commands</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#deployment-commands">Deployment Commands</a></li>
       </ul>
     </li>
 </details>
@@ -180,9 +183,19 @@ Describe pod: kubectl describe pod <pod-name>
   * Declarative updates for Pods and ReplicaSets.
   * Declare desire state  
 
-### Replicaset commands
+### Replicaset Commands
 ```
 Edit: kubectl edit replicasets <name>
 Run: kubectl apply -f 
 Scale manually: kubectl scale --replicas=3 rs/my-replicaset
+Delete: kubectl delete rs <name>
+```
+
+
+### Deployment Commands
+```
+Edit: kubectl edit deployment <name>
+Run: kubectl apply -f 
+Scale manually: kubectl scale --replicas=3 rs/my-replicaset
+Delete: kubectl delete deployment <name>
 ```
