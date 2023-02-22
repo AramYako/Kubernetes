@@ -79,6 +79,16 @@
         <li> <a href="#namespace-commands">Namespace commands</a></li>
       </ul>
     </li>
+    </li>
+     <li>
+      <a href="#args-and-commands">Args and Commands</a>
+      <ul>
+        <li> <a href="#args">args</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#command">command</a></li>
+      </ul>
+    </li>
 </details>
   
 # To Learn
@@ -228,3 +238,19 @@ Get pods in all namespaces: kubectl get pods --all-namespaces
 Set default namespace
 FQDN name service in another namespace: <service-name>.<Namespace>.svc.cluster.local
 ```
+
+
+## Args and Commands
+### args
+* We can define args that will be sent to a docker file. The args, override the CMD in docker file 
+
+![image](https://user-images.githubusercontent.com/29054168/220786777-86c8df03-bfe3-4537-b370-a7058fa4ff1e.png)
+
+
+### command
+* We can override the entrypoint in docker by specifiying command in kubernetes
+
+![image](https://user-images.githubusercontent.com/29054168/220786939-448e7efc-4a47-4830-b94f-1e9b98b71597.png)
+
+
+The end result will be docker entrypoint is replace by "sleep" and the cmd is replace by "10". So docker will sleep 10 seconds
