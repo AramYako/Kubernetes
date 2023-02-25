@@ -89,7 +89,7 @@
         <li> <a href="#command">command</a></li>
       </ul>
       <ul>
-        <li> <a href="see-pod-args-and-command"> See pod args and command</a></li>
+        <li> <a href="see-pod-args-and-command">See pod args and command</a></li>
       </ul>
     </li>
 </details>
