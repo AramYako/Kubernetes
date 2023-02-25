@@ -88,8 +88,12 @@
       <ul>
         <li> <a href="#command">command</a></li>
       </ul>
+      <ul>
+        <li> <a href="see-pod-args-and-command"> See pod args and command</a></li>
+      </ul>
     </li>
 </details>
+
   
 # To Learn
   * Services, clusterip, loadbalancer, nodeportexternalname service
@@ -254,3 +258,9 @@ FQDN name service in another namespace: <service-name>.<Namespace>.svc.cluster.l
 
 
 The end result will be docker entrypoint is replace by "sleep" and the cmd is replace by "10". So docker will sleep 10 seconds
+
+## See pod args and command
+* kubectl describe pod <pod name>
+
+![image](https://user-images.githubusercontent.com/29054168/221383722-b7ddd329-a635-4a3b-920a-bce40accb671.png)
+
