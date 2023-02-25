@@ -222,7 +222,7 @@ Delete: kubectl delete deployment <name>
 ```
   
   
-##Namespace
+## Namespace
 
  * Default namespace: default
  
