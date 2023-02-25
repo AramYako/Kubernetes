@@ -101,6 +101,7 @@
 # To Learn
   * Services, clusterip, loadbalancer, nodeportexternalname service
   * Expose a pod clusteriå --expose
+  * kubbectl replace --force -f temp file
 
 ## Kubernetes Locally
 
