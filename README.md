@@ -91,6 +91,9 @@
       <ul>
         <li> <a href="#describe-pod-command-and-args">Describe Pod command and args</a></li>
       </ul>
+       <ul>
+        <li> <a href="#run-image-with-arguments">Run image with arguments</a></li>
+      </ul>
     </li>
 </details>
 
@@ -263,4 +266,11 @@ The end result will be docker entrypoint is replace by "sleep" and the cmd is re
 * kubectl describe pod <pod name>
 
 ![image](https://user-images.githubusercontent.com/29054168/221383722-b7ddd329-a635-4a3b-920a-bce40accb671.png)
+
+  
+  ### Run image with arguments
+  
+  *  kubectl run nginx --image=nginx -- <arg1> <arg2> ... <argN>
+  * nginx run testpod --image=nginx -- --color green
+  ![image](https://user-images.githubusercontent.com/29054168/221383900-b94d7d3a-46fd-4c39-b8b7-90967ada2be4.png)
 
