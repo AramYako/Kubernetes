@@ -274,4 +274,21 @@ The end result will be docker entrypoint is replace by "sleep" and the cmd is re
   *  kubectl run nginx --image=nginx -- <arg1> <arg2> ... <argN>
   * nginx run testpod --image=nginx -- --color green
   ![image](https://user-images.githubusercontent.com/29054168/221383900-b94d7d3a-46fd-4c39-b8b7-90967ada2be4.png)
+  
+  
+  
+  ## Envrironment and configs maps
+  
+  ###Config maps
 
+```
+Create config map Imperative:  kubectl create configmap app-settings --from-literal=app=SomeValue --from-literal=mode=development
+Create config map Imperative from file:  kubectl create configmap app-settings --from-file=app-config.properties
+Get config maps: Kubectl get configmaps
+Describe config maps: kubectl describe configmaps <name>
+```
+
+* We can create many config maps
+* App-config
+* Redis-config
+* Mysql-config
