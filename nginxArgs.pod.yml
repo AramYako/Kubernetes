@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: command-demo
+  labels:
+    purpose: demonstrate-command
+spec:
+  containers:
+  - name: command-demo-container
+    image: debian
+    env:
+    - name: HostName
+      value: HOSTNAME
+    - name: KubPortName
+      value: KUBERNETES_PORT
+    command: ["printenv"]
+    args: ["$(HostName)", "$(KubPortName)"]
+  restartPolicy: OnFailure

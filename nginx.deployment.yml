@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: default
+  labels:
+    app: my-nginx-deployment     #For deployment resource
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-nginx
+  template:
+    metadata:
+      labels:
+        app: my-nginx
+        type: frontend    #Like tags in azure
+    spec:
+      containers:
+      - name: my-nginx
+        image: nginx:alpine
+        resources:
+          limits:
+            memory: "128Mi" #128 mb
+            cpu: "200m"       #200 millicpu (0.2 cpu or 20% of cpu)
+        ports:
+        - containerPort: 80

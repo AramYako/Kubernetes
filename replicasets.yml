@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-two   #Replicaset name
+  labels:
+    app: nginx        #Labels for replicaset
+    tier: frontend       #Labels for replicaset
+spec:
+  # modify replicas according to your case
+  replicas: 4
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend  #Pod label
+    spec:
+      containers:
+      - name: nginx-api  #Container name
+        image: nginx:alpine  #Image
+
+
+
+
+
+
+
+        # I was expecting replicasetfrontendnamev2 to have 5 pods and replicasetfrontendnamev3 to have 2 pods. Since they have the same match labels
