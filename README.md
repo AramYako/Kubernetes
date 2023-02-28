@@ -292,3 +292,9 @@ Describe config maps: kubectl describe configmaps <name>
 * App-config
 * Redis-config
 * Mysql-config
+
+
+* Load configs from file --from-file
+
+![image](https://user-images.githubusercontent.com/29054168/221700447-ef64c3fd-cdda-4b74-9ce3-15df25d37e39.png)
+
