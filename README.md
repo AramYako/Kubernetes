@@ -95,6 +95,12 @@
         <li> <a href="#run-image-with-arguments">Run image with arguments</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#envrironment-and-configs-maps">Envrironment and configs maps</a>
+      <ul>
+        <li> <a href="#config-maps">Config maps</a></li>
+      </ul>
+    </li>
 </details>
 
   
@@ -279,7 +285,7 @@ The end result will be docker entrypoint is replace by "sleep" and the cmd is re
   
   ## Envrironment and configs maps
   
-  ###Config maps
+  ### Config maps
 
 ```
 Create config map Imperative:  kubectl create configmap app-settings --from-literal=app=SomeValue --from-literal=mode=development
@@ -298,3 +304,15 @@ Describe config maps: kubectl describe configmaps <name>
 
 ![image](https://user-images.githubusercontent.com/29054168/221700447-ef64c3fd-cdda-4b74-9ce3-15df25d37e39.png)
 
+
+
+
+## Tips for exam
+
+## Modify existing resource
+```
+* Get resource YAML: kubectl get pod <name> -o yaml > pod.yaml
+* Delete old resource
+* Make changes
+* Apply new yaml
+```
