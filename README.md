@@ -101,6 +101,15 @@
         <li> <a href="#config-maps">Config maps</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#secrets">Secrets</a>
+      <ul>
+        <li> <a href="#encode">Encode</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#secret">Secret</a></li>
+      </ul>
+    </li>
 </details>
 
   
@@ -304,6 +313,26 @@ Describe config maps: kubectl describe configmaps <name>
 
 ![image](https://user-images.githubusercontent.com/29054168/221700447-ef64c3fd-cdda-4b74-9ce3-15df25d37e39.png)
 
+
+
+## Secrets
+
+### Encode
+```
+Encode: echo -n 'secretValue' | base64
+Decode: echo -n 'base64value' | base64 --decode
+```
+
+### Secret 
+
+```
+Get Secrets:                 kubectl get secret
+Get secret YAML:             kubectl get secret <secret name> -o yaml
+Get Secret data:             kubectl get secret <secret name> -o jsonpath='{.data}'
+Get secret type:             kubectl get secret <secret name> -o jsonpath='{.type}'
+Create secret file dry run:  kubectl create secret generic dry-secret --dry-run=client --from-literal=key1=value1 --from-literal=key2=value2  -o yaml > secret.yaml
+
+```
 
 
 
