@@ -119,6 +119,9 @@
         <li> <a href="#sa-token">SA-token</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#resource">Resource</a>
+    </li>
 </details>
 
   
@@ -384,6 +387,27 @@ Create SA:                                     kubectl create sa <name>
 Set SA account for pod at creation:  spec.serviceAccountName: <sa name>
 Dont mount service account to pod:   spec.automountServiceAccountToken: false
 ```
+  
+  
+## Resource
+  
+* Node scheduler in control plan schedules pods in nodes if node has the capacity to run the pod
+* What is the minimum CPU for a pod: 0.5 CPU
+* What is the minimum memory for a pod: 256 Mi
+* If you need more specifu resources in Yaml
+* Request vs limit: If a node has more resources the pod can try to use more resources than it request. But not exceed its limit. 
+  
+* 0.1 CPU in m is= 100m 
+* What is minimum CPU m? 1m
+* 1 CPU in azure is 1 azure core
+
+* Memory 1: 1G, 1M, 1K or also 1 Gi, 1Mi, 1Ki
+* Can a pod use more resources in memory that its limit? Yes, but if it constantly does it it will terminate
+  
+![image](https://user-images.githubusercontent.com/29054168/224572521-79e032e5-fc08-4940-8066-49a164df7059.png)
+  
+  
+  
 
 ## Tips for exam
 
