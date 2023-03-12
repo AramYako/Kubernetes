@@ -336,6 +336,48 @@ Create secret file dry run:  kubectl create secret generic dry-secret --dry-run=
 
 
 
+## Service Account
+
+* Client authorize to kubernetes cluster.
+* Can user use Service account? No they should use user account 
+* Does a namespace always have at least one serivce account? Yes (default)
+* Does pods use service account? Yes, by default if you dont specify they use "default" service account 
+
+![image](https://user-images.githubusercontent.com/29054168/224547167-f70b77b5-f3db-4611-83d2-a3232fbf6211.png)
+
+
+### Service Account Commands
+
+```
+Get Service Accounts:                          kubectl get serviceaccounts
+Get service account Pod use:                   kubectl get pod <podName> -o jsonpath='{.spec.serviceAccountName}'
+Get bearer token for a SA:                     kubectl create token <sa name>
+
+```
+
+
+###  SA-token
+
+
+####
+
+* In mount you can see the volume for accessService. There you can find the token (bearer token it use) 
+
+![image](https://user-images.githubusercontent.com/29054168/224560309-cc0cf712-87e0-41d4-a99d-5508203d0dca.png)
+
+* Go iteractivly instead the pod
+* kubectl exec -it <podname> -- bash
+* ls /var/run/secrets/kubernetes.io/serviceaccount
+* cat token (to viewe the bearer token)
+
+
+![image](https://user-images.githubusercontent.com/29054168/224560403-c69a5470-8b7a-4079-96a6-40919dc57cbb.png)
+
+```
+Set SA account for pod at creation:  spec.serviceAccountName: <sa name>
+Dont mount service account to pod:   spec.automountServiceAccountToken: false
+```
+
 ## Tips for exam
 
 ## Modify existing resource
