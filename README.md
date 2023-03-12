@@ -110,6 +110,15 @@
         <li> <a href="#secret">Secret</a></li>
       </ul>
     </li>
+  <li>
+      <a href="#service-account">Service Account</a>
+      <ul>
+        <li> <a href="#service-account-commands">Service Account Commands</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#sa-token">SA-token</a></li>
+      </ul>
+    </li>
 </details>
 
   
@@ -352,14 +361,12 @@ Create secret file dry run:  kubectl create secret generic dry-secret --dry-run=
 Get Service Accounts:                          kubectl get serviceaccounts
 Get service account Pod use:                   kubectl get pod <podName> -o jsonpath='{.spec.serviceAccountName}'
 Get bearer token for a SA:                     kubectl create token <sa name>
+Create SA:                                     kubectl create sa <name> 
 
 ```
 
 
 ###  SA-token
-
-
-####
 
 * In mount you can see the volume for accessService. There you can find the token (bearer token it use) 
 
