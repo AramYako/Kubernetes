@@ -406,7 +406,8 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
   
 ![image](https://user-images.githubusercontent.com/29054168/224572521-79e032e5-fc08-4940-8066-49a164df7059.png)
   
-  
+![image](https://user-images.githubusercontent.com/29054168/224846488-a4d44aca-854c-467c-b225-3dfc400cab08.png)
+
   
 
 ## Tips for exam
