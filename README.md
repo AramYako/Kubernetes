@@ -408,7 +408,18 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
   
 ![image](https://user-images.githubusercontent.com/29054168/224846488-a4d44aca-854c-467c-b225-3dfc400cab08.png)
 
+
   
+## Taints and tolerations
+  
+* We can taint a node, so only pods with that taint can go to that pod. If we dont assign anything to the pod, its rejected
+* Tant-effect: NoSchedule: 
+
+```
+ Tant node:         kubectl taint nodes <node-name> key=value:tant-effect(NoSchedule, PreferNoSchedule, NoExecute)
+ Remove taint:      kubectl taint nodes <node-name> key1=value::tant-effect-
+  
+```
 
 ## Tips for exam
 
