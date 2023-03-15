@@ -101,6 +101,39 @@
         <li> <a href="#config-maps">Config maps</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#secrets">Secrets</a>
+      <ul>
+        <li> <a href="#encode">Encode</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#secret">Secret</a></li>
+      </ul>
+    </li>
+  <li>
+      <a href="#service-account">Service Account</a>
+      <ul>
+        <li> <a href="#service-account-commands">Service Account Commands</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#sa-token">SA-token</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#resource">Resource</a>
+    </li>
+  <li>
+      <a href="#taints-and-tolerations">Taints and Tolerations</a>
+      <ul>
+        <li> <a href="#taint-node">Taint Node</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#toleration-pod">Toleration Pod</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#multiple-taint-and-tolerations">Multiple taint and tolerations</a></li>
+      </ul>
+    </li>
 </details>
 
   
@@ -306,6 +339,134 @@ Describe config maps: kubectl describe configmaps <name>
 
 
 
+## Secrets
+
+### Encode
+```
+Encode: echo -n 'secretValue' | base64
+Decode: echo -n 'base64value' | base64 --decode
+```
+
+### Secret 
+
+```
+Get Secrets:                 kubectl get secret
+Get secret YAML:             kubectl get secret <secret name> -o yaml
+Get Secret data:             kubectl get secret <secret name> -o jsonpath='{.data}'
+Get secret type:             kubectl get secret <secret name> -o jsonpath='{.type}'
+Create secret file dry run:  kubectl create secret generic dry-secret --dry-run=client --from-literal=key1=value1 --from-literal=key2=value2  -o yaml > secret.yaml
+
+```
+
+
+
+## Service Account
+
+* Client authorize to kubernetes cluster.
+* Can user use Service account? No they should use user account 
+* Does a namespace always have at least one serivce account? Yes (default)
+* Does pods use service account? Yes, by default if you dont specify they use "default" service account 
+
+![image](https://user-images.githubusercontent.com/29054168/224547167-f70b77b5-f3db-4611-83d2-a3232fbf6211.png)
+
+
+### Service Account Commands
+
+```
+Get Service Accounts:                          kubectl get serviceaccounts
+Get service account Pod use:                   kubectl get pod <podName> -o jsonpath='{.spec.serviceAccountName}'
+Get bearer token for a SA:                     kubectl create token <sa name>
+Create SA:                                     kubectl create sa <name> 
+
+```
+
+
+###  SA-token
+
+* In mount you can see the volume for accessService. There you can find the token (bearer token it use) 
+
+![image](https://user-images.githubusercontent.com/29054168/224560309-cc0cf712-87e0-41d4-a99d-5508203d0dca.png)
+
+* Go iteractivly instead the pod
+* kubectl exec -it <podname> -- bash
+* ls /var/run/secrets/kubernetes.io/serviceaccount
+* cat token (to viewe the bearer token)
+
+
+![image](https://user-images.githubusercontent.com/29054168/224560403-c69a5470-8b7a-4079-96a6-40919dc57cbb.png)
+
+```
+Set SA account for pod at creation:  spec.serviceAccountName: <sa name>
+Dont mount service account to pod:   spec.automountServiceAccountToken: false
+```
+  
+  
+## Resource
+  
+* Node scheduler in control plan schedules pods in nodes if node has the capacity to run the pod
+* What is the minimum CPU for a pod: 0.5 CPU
+* What is the minimum memory for a pod: 256 Mi
+* If you need more specifu resources in Yaml
+* Request vs limit: If a node has more resources the pod can try to use more resources than it request. But not exceed its limit. 
+  
+* 0.1 CPU in m is= 100m 
+* What is minimum CPU m? 1m
+* 1 CPU in azure is 1 azure core
+
+* Memory 1: 1G, 1M, 1K or also 1 Gi, 1Mi, 1Ki
+* Can a pod use more resources in memory that its limit? Yes, but if it constantly does it it will terminate
+  
+![image](https://user-images.githubusercontent.com/29054168/224572521-79e032e5-fc08-4940-8066-49a164df7059.png)
+  
+![image](https://user-images.githubusercontent.com/29054168/224846488-a4d44aca-854c-467c-b225-3dfc400cab08.png)
+
+
+  
+## Taints and tolerations
+  
+* We can taint a node, so only pods with that taint can go to that pod. If we dont assign anything to the pod, its rejected
+* Tant-effect: NoSchedule: Pods that dont match the taint will not be scheduled on the node
+* Tant-effect: PreferNoSchedule: It will try not to schedule the pod on the nodes that have taint the pod dosnt match 
+* Tant-effect: NoExecute: Pods in the node that doesnt match the taint will be evicted, and no new pods will be scheduled on the node
+* Taint are set on pod or nodes? Nodes
+* Tolerations are set on: Pods
+* Taints does it make sure pods that match are always assigned to the node? No the other nodes have to filter, so the pod can be assign to them aslo
+* If pods exist in node and taint NoSchedule or PreferNoSchedule is applied. Existing pods not matching the taint will not be evicted
+* Effect: NoExecute will remove all pods not matching the taint in a node. Used for decommision node, maintance. 
+* Can node have multiple taints: Yes
+
+### Taint Node
+  
+```
+ Tant node:                       kubectl taint nodes <node-name> key=value:tant-effect(NoSchedule, PreferNoSchedule, NoExecute)
+ Tant node (app as key):          kubectl taint nodes <node-name> app=backend:tant-effect(NoSchedule, PreferNoSchedule, NoExecute)
+ Remove taint:                    kubectl taint nodes <node-name> key1-
+ See node taint:                  kubectl get node docker-desktop -o jsonpath='{.spec.taints}'
+  
+```
+  
+### Toleration Pod
+  
+ * Can pod have multiple toleration: Yes
+  
+  ![image](https://user-images.githubusercontent.com/29054168/225460071-7537c02d-de89-4efb-b4e9-f0b48105b88c.png)
+
+  
+```
+  * Operator: Equal: Make sure that the key "app" will match the value "backend" 
+  * Operator: Exists: make sure the key exist, not need the value property then
+```
+  
+  
+### Multiple taint and tolerations
+  
+  * It will only take actions for the tains that are un-matched
+  * Exampel below the "key2=value2:NoSchedule" is un-matched. So it will not schedule anything on the node. It will however not be evicted if already running on the node "key1=value1:NoExecute" because the pod match the taint 
+  
+ ![image](https://user-images.githubusercontent.com/29054168/225466381-4319686a-5b3e-4984-9752-513a01483b4d.png)
+
+  
+  
 
 ## Tips for exam
 
