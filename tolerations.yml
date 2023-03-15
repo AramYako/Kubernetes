@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-tolerations
+  labels:
+    name: tolerations
+spec:
+  containers:
+  - name: nginx-pod-tolerations
+    image: nginx:alpine
+  tolerations:
+    - key: "app"
+      operator: "Equal"
+      value: "backend"
+      effect: "NoSchedule"
+
+        

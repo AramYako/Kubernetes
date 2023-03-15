@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: command-demo-config-map
+  labels:
+    purpose: demonstrate-command-config-map
+spec:
+  containers:
+  - name: command-demo-container-config-map
+    image: debian
+    env:
+    - name: GameProperties
+      valueFrom:
+        configMapKeyRef: 
+          name: game-demo
+          key: game.properties
+    command: ["/bin/echo"]
+    args: ["$(GameProperties)"]
+  restartPolicy: OnFailure
