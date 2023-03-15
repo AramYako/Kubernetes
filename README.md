@@ -122,6 +122,18 @@
     <li>
       <a href="#resource">Resource</a>
     </li>
+  <li>
+      <a href="#taints-and-tolerations">Taints and Tolerations</a>
+      <ul>
+        <li> <a href="#taint-node">Taint Node</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#toleration-pod">Toleration Pod</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#multiple-taint-and-tolerations">Multiple taint and tolerations</a></li>
+      </ul>
+    </li>
 </details>
 
   
@@ -423,7 +435,7 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
 * Effect: NoExecute will remove all pods not matching the taint in a node. Used for decommision node, maintance. 
 * Can node have multiple taints: Yes
 
-## Taint Node
+### Taint Node
   
 ```
  Tant node:                       kubectl taint nodes <node-name> key=value:tant-effect(NoSchedule, PreferNoSchedule, NoExecute)
@@ -433,7 +445,7 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
   
 ```
   
-## Toleration Pod
+### Toleration Pod
   
  * Can pod have multiple toleration: Yes
   
@@ -444,6 +456,17 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
   * Operator: Equal: Make sure that the key "app" will match the value "backend" 
   * Operator: Exists: make sure the key exist, not need the value property then
 ```
+  
+  
+### Multiple taint and tolerations
+  
+  * It will only take actions for the tains that are un-matched
+  * Exampel below the "key2=value2:NoSchedule" is un-matched. So it will not schedule anything on the node. It will however not be evicted if already running on the node "key1=value1:NoExecute" because the pod match the taint 
+  
+ ![image](https://user-images.githubusercontent.com/29054168/225466381-4319686a-5b3e-4984-9752-513a01483b4d.png)
+
+  
+  
 
 ## Tips for exam
 
