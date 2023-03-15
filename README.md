@@ -421,7 +421,7 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
 * Taints does it make sure pods that match are always assigned to the node? No the other nodes have to filter, so the pod can be assign to them aslo
 * If pods exist in node and taint NoSchedule or PreferNoSchedule is applied. Existing pods not matching the taint will not be evicted
 * Effect: NoExecute will remove all pods not matching the taint in a node. Used for decommision node, maintance. 
-
+* Can node have multiple taints: Yes
 
 ## Taint Node
   
@@ -435,7 +435,14 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
   
 ## Toleration Pod
   
+ * Can pod have multiple toleration: Yes
+  
+  ![image](https://user-images.githubusercontent.com/29054168/225460071-7537c02d-de89-4efb-b4e9-f0b48105b88c.png)
+
+  
 ```
+  * Operator: Equal: Make sure that the key "app" will match the value "backend" 
+  * Operator: Exists: make sure the key exist, not need the value property then
 ```
 
 ## Tips for exam
