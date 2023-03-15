@@ -413,11 +413,18 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
 ## Taints and tolerations
   
 * We can taint a node, so only pods with that taint can go to that pod. If we dont assign anything to the pod, its rejected
-* Tant-effect: NoSchedule: 
+* Tant-effect: NoSchedule: Pods that dont match the taint will not be scheduled on the node
+* Tant-effect: PreferNoSchedule: It will try not to schedule the pod on the nodes that have taint the pod dosnt match 
+* Tant-effect: NoExecute: Pods in the node that doesnt match the taint will be evicted, and no new pods will be scheduled on the node
+* Taint are set on pod or nodes? Nodes
+* Tolerations are set on: Pods
+
 
 ```
- Tant node:         kubectl taint nodes <node-name> key=value:tant-effect(NoSchedule, PreferNoSchedule, NoExecute)
- Remove taint:      kubectl taint nodes <node-name> key1=value::tant-effect-
+ Tant node:                       kubectl taint nodes <node-name> key=value:tant-effect(NoSchedule, PreferNoSchedule, NoExecute)
+ Tant node (app as key):          kubectl taint nodes <node-name> app=backend:tant-effect(NoSchedule, PreferNoSchedule, NoExecute)
+ Remove taint:                    kubectl taint nodes <node-name> key1=value::tant-effect-
+ See node taint:                  kubectl get node docker-desktop -o jsonpath='{.spec.taints}'
   
 ```
 
