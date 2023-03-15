@@ -423,7 +423,7 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
 ```
  Tant node:                       kubectl taint nodes <node-name> key=value:tant-effect(NoSchedule, PreferNoSchedule, NoExecute)
  Tant node (app as key):          kubectl taint nodes <node-name> app=backend:tant-effect(NoSchedule, PreferNoSchedule, NoExecute)
- Remove taint:                    kubectl taint nodes <node-name> key1=value::tant-effect-
+ Remove taint:                    kubectl taint nodes <node-name> key1-
  See node taint:                  kubectl get node docker-desktop -o jsonpath='{.spec.taints}'
   
 ```
