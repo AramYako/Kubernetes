@@ -418,6 +418,9 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
 * Tant-effect: NoExecute: Pods in the node that doesnt match the taint will be evicted, and no new pods will be scheduled on the node
 * Taint are set on pod or nodes? Nodes
 * Tolerations are set on: Pods
+* Taints does it make sure pods that match are always assigned to the node? No the other nodes have to filter, so the pod can be assign to them aslo
+* If pods exist in node and taint NoSchedule or PreferNoSchedule is applied. Existing pods not matching the taint will not be evicted
+* Effect: NoExecute will remove all pods not matching the taint in a node. Used for decommision node, maintance. 
 
 
 ## Taint Node
