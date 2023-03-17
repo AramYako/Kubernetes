@@ -467,6 +467,26 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
 
   
   
+## Node selector
+* Assign pod to a specific node 
+
+```
+Set label on node: kubectl label nodes <your-node-name> disktype=ssd
+Get labels on node: kubectl get nodes <nodename> --show-labels
+```
+
+
+### 2 ways to set label on pod 
+
+
+NodeSelector
+
+![image](https://user-images.githubusercontent.com/29054168/225929863-df7ac6f8-3d04-48a0-9ee8-84ec5bd99149.png)
+
+NodeName
+
+![image](https://user-images.githubusercontent.com/29054168/225929919-9086b313-2216-42e4-b19f-251139795c54.png)
+
 
 ## Tips for exam
 
