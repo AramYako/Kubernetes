@@ -467,12 +467,13 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
 
   
   
-## Node selector
+## Node selector && Affinity
 * Assign pod to a specific node 
 
 ```
 Set label on node: kubectl label nodes <your-node-name> disktype=ssd
 Get labels on node: kubectl get nodes <nodename> --show-labels
+Remove label: kubectl label pod my-pod env-
 ```
 
 
@@ -487,6 +488,11 @@ NodeName
 
 ![image](https://user-images.githubusercontent.com/29054168/225929919-9086b313-2216-42e4-b19f-251139795c54.png)
 
+
+
+## Affinity
+
+* When we need to use "or" or "not" some more advanced feature can we use node selector? No then we need to use affinity  
 
 ## Tips for exam
 
