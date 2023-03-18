@@ -467,7 +467,7 @@ Dont mount service account to pod:   spec.automountServiceAccountToken: false
 
   
   
-## Node selector && Affinity
+## Node selector & Affinity
 * Assign pod to a specific node 
 
 ```
@@ -489,11 +489,21 @@ NodeName
 ![image](https://user-images.githubusercontent.com/29054168/225929919-9086b313-2216-42e4-b19f-251139795c54.png)
 
 
+If match fails, and no pod have label that can take the pod describe pod show this error
+
+![image](https://user-images.githubusercontent.com/29054168/226115640-e4a0eebd-1370-4675-a2ae-06461c7088a4.png)
+
+
+
+
 
 ## Affinity
 
 * When we need to use "or" or "not" some more advanced feature can we use node selector? No then we need to use affinity  
 
+* 2 Affinity types: 
+* requiredDuringSchedulingIgnoredDuringExecution
+* preferredDuringSchedulingIgnoredDuringExecution
 ## Tips for exam
 
 ## Modify existing resource
