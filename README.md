@@ -134,6 +134,18 @@
         <li> <a href="#multiple-taint-and-tolerations">Multiple taint and tolerations</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#node-selector--affinity">Node Selector Affinity</a>
+      <ul>
+        <li> <a href="#2-ways-to-set-label-on-pod">2-ways-to-set-label-on-pod</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#affinity">Affinity</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#taintstoleration-and-affinity">Taints/toleration and Affinity</a></li>
+      </ul>
+    </li>
 </details>
 
   
@@ -497,13 +509,23 @@ If match fails, and no pod have label that can take the pod describe pod show th
 
 
 
-## Affinity
+### Affinity
 
 * When we need to use "or" or "not" some more advanced feature can we use node selector? No then we need to use affinity  
 
 * 2 Affinity types: 
 * requiredDuringSchedulingIgnoredDuringExecution
 * preferredDuringSchedulingIgnoredDuringExecution
+
+
+
+### Taints/toleration and Affinity
+
+* If we had node A and Node B. And pod "a" and pod "b" and pod "c". How can we make sure A go to A and B go to B and c to nonone? 
+* Node A and B taint them with Taint
+* Pod use affinity to connect them to nodes
+
+
 ## Tips for exam
 
 ## Modify existing resource
