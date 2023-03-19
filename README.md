@@ -153,6 +153,7 @@
   * Services, clusterip, loadbalancer, nodeportexternalname service
   * Expose a pod clusteriå --expose
   * kubbectl replace --force -f temp file
+  * Multi container -it how to  choose which container
 
 ## Kubernetes Locally
 
@@ -543,6 +544,13 @@ YAML multi container:
 
 ![image](https://user-images.githubusercontent.com/29054168/226192504-b4fe6dca-26dd-4541-97db-7e57ed6f590a.png)
 
+  
+  
+ To see containers in a pod "kubectl get pods" and see "Ready"
+  
+  ![image](https://user-images.githubusercontent.com/29054168/226193323-65a00571-6fe4-46cb-9279-2c80e93d4fc4.png)
+
+  
 
 
 ## Tips for exam
@@ -554,3 +562,11 @@ YAML multi container:
 * Make changes
 * Apply new yaml
 ```
+  
+ ## Exec it
+  
+  * To view a log file in a pod 
+  
+ ```
+  kubectl exec -it <pod-name> -- cat log/app.log
+ ```
