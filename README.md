@@ -526,6 +526,25 @@ If match fails, and no pod have label that can take the pod describe pod show th
 * Pod use affinity to connect them to nodes
 
 
+
+## Multi container pod 
+
+* Containers in a pod can refer to eachother through: http://localhost
+* Multi container pod scale and destory same time 
+* Containers in a pod have access to the same volume storage
+
+
+* Multi container pod design pattern Sidecar: Log agent deployed with a server. Log server collect logs and send them to log analytic
+* Multi container pod design pattern Adapter: If for exampel the logs are different format. We deploy a container in the pod that formats the logs
+* Multi container pod design pattern Ambassador: A container that logs to environment database. So the application can just think about using "localhost" for the container 
+
+
+YAML multi container: 
+
+![image](https://user-images.githubusercontent.com/29054168/226192504-b4fe6dca-26dd-4541-97db-7e57ed6f590a.png)
+
+
+
 ## Tips for exam
 
 ## Modify existing resource
