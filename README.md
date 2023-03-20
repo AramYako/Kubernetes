@@ -232,7 +232,22 @@ Describe pod: kubectl describe pod <pod-name>
 ![image](https://user-images.githubusercontent.com/29054168/218318499-a4dafa41-b6f3-48c7-8d8d-56560d1200e5.png)
 
 
-## Probe
+## Probe and status 
+
+
+## Condition
+
+* There are 4 default conditions
+* PodScheduled: Pod has been scheduled to a node
+* ContainerReady: All containers in the pod are ready
+* Initilized: Init containers have completed successfully
+* Ready: Pod is ready 
+
+To see the conditions describe pod 
+
+![image](https://user-images.githubusercontent.com/29054168/226489763-ed123180-ccc0-4e71-aed4-26f7605ef991.png)
+
+
 
 ## Liveness and Readiness probe
 
