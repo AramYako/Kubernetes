@@ -50,7 +50,7 @@
   </ol>
     <ol>
     <li>
-      <a href="#probe">Probe</a>
+      <a href="#probe-and-status">Probe and Status</a>
       <ul>
         <li> <a href="#liveness-and-readiness-probe">Liveness and Readiness probe</a></li>
         <ul>
@@ -233,6 +233,12 @@ Describe pod: kubectl describe pod <pod-name>
 
 
 ## Probe and status 
+
+## Pod status 
+* Pod has 3 status
+* Pending: Master tries to find a node to place the pod at
+* ContainerCreating: Pod is in a node. It pulls the image and build
+* Run: The pod is running and will recive requests
 
 
 ## Condition
