@@ -146,6 +146,9 @@
         <li> <a href="#taintstoleration-and-affinity">Taints/toleration and Affinity</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#logs">Logs</a>
+    </li>
 </details>
 
   
@@ -572,8 +575,13 @@ YAML multi container:
   ![image](https://user-images.githubusercontent.com/29054168/226193323-65a00571-6fe4-46cb-9279-2c80e93d4fc4.png)
 
   
-
-
+## Logs 
+ 
+  ```
+  View logs for pod:                             Kubectl logs <podname>
+  View logs follow:                              kubectl logs -f <podname>
+  View logs container (multi-container pod)      kubectl logs -f <podname> -c <containerName> 
+```
 ## Tips for exam
 
 ## Modify existing resource
