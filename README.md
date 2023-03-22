@@ -147,10 +147,15 @@
       </ul>
     </li>
     <li>
-      <a href="#logs">Logs</a>
+      <a href="#observability">observability</a>
+      <ul>
+        <li> <a href="#logs">Logs</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#metric">Metric</li>
+      </ul>
     </li>
 </details>
-
   
 # To Learn
   * Services, clusterip, loadbalancer, nodeportexternalname service
@@ -575,13 +580,27 @@ YAML multi container:
   ![image](https://user-images.githubusercontent.com/29054168/226193323-65a00571-6fe4-46cb-9279-2c80e93d4fc4.png)
 
   
-## Logs 
+## observability
+
+
+### Logs
  
   ```
   View logs for pod:                             Kubectl logs <podname>
   View logs follow:                              kubectl logs -f <podname>
   View logs container (multi-container pod)      kubectl logs -f <podname> -c <containerName> 
 ```
+
+### Metric
+* basic metric in ram: install git: https://github.com/kubernetes-sigs/metrics-server
+
+
+```
+Install metric after git pull:      kubectl create -f .
+See metric nodes:                   kubectl top nodes
+See metric pods:                    kubectl top pods
+```
+
 ## Tips for exam
 
 ## Modify existing resource
