@@ -293,6 +293,13 @@ To see the conditions describe pod
   * Declarative updates for Pods and ReplicaSets.
   * Declare desire state  
 
+
+
+* Several matchLabels
+
+![image](https://user-images.githubusercontent.com/29054168/227383335-bc2970d6-2fae-4ee2-9cdb-90976ee2b8b2.png)
+
+
 ### Replicaset Commands
 ```
 Edit: kubectl edit replicasets <name>
