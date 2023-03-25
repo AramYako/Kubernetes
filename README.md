@@ -608,6 +608,27 @@ See metric nodes:                   kubectl top nodes
 See metric pods:                    kubectl top pods
 ```
 
+
+## Deployment 
+
+### Revsions
+
+When a change happends in the spec.pod section a new revision is created for the deployment 
+
+![image](https://user-images.githubusercontent.com/29054168/227723556-6e1c8183-603b-477c-ae16-6c1dd9e3a623.png)
+
+
+### Rollout
+
+* kubectl rollout 
+
+![image](https://user-images.githubusercontent.com/29054168/227723584-e05f5a2e-43e1-4a6b-b5d1-1c3a3c020600.png)
+
+### Deployment strategies 
+
+* Rollout: Destory one pod and recreate it. Does that for all pods. This is default
+* ReCreate: Destory all pods and re-create them. We do have a period of unresponsiveness
+
 ## Tips for exam
 
 ## Modify existing resource
@@ -617,6 +638,8 @@ See metric pods:                    kubectl top pods
 * Make changes
 * Apply new yaml
 ```
+  
+  
   
  ## Exec it
   
