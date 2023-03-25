@@ -624,6 +624,8 @@ When a change happends in the spec.pod section a new revision is created for the
 
 ![image](https://user-images.githubusercontent.com/29054168/227723584-e05f5a2e-43e1-4a6b-b5d1-1c3a3c020600.png)
 
+* Go to previous revision: kubectl rollout undo deployment nginx-deployment --to-revision=3
+
 ### Deployment strategies 
 
 * Rollout: Destory one pod and recreate it. Does that for all pods. This is default
