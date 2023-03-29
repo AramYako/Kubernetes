@@ -155,6 +155,15 @@
         <li> <a href="#metric">Metric</li>
       </ul>
     </li>
+    <li>
+      <a href="#service">Service</a>
+      <ul>
+        <li> <a href="#nodeport">NodePort</a></li>
+      </ul>
+      <ul>
+        <li> <a href="#clusterip">ClusterIp</li>
+      </ul>
+    </li>
 </details>
   
 # To Learn
@@ -644,6 +653,45 @@ When a change happends in the spec.pod section a new revision is created for the
 ```
   
   
+  
+## Service
+* Internal and external communication: Yes Services
+* Inside node: Can we ssh a pod? Yes inside we can
+* Outside the node, how do we access the pods? Yes service: NodePort service. It will listen to a port, forward the request to a port that a pod listens to
+* ServiceTypes: NodePort, ClusterIP, LoadBalanser
+
+
+### NodePort
+
+* How many ports are involved? 3
+
+* NodePort: Port of the node (default range 30000-32767)
+* Port: Port of the Service
+* TargetPort: Port of the pod 
+* If you dont probide target port, it assumes to be same as port 
+* If you dont provide nodeport a random value between 30000-32767 will be assgined 
+
+![image](https://user-images.githubusercontent.com/29054168/228680476-e316425a-45cc-49a8-b488-92345a807476.png)
+
+![image](https://user-images.githubusercontent.com/29054168/228682614-c373e883-930e-4129-86ed-9f77de30aaef.png)
+
+
+Several pods: The node port will act as a load balanser
+![image](https://user-images.githubusercontent.com/29054168/228683266-870ebe79-2cbe-4ba7-8cb2-d815ef8144ed.png)
+
+Several nodes: The service NodePort will reach out to all nodes
+
+
+![image](https://user-images.githubusercontent.com/29054168/228683352-850a62eb-1db5-4447-924e-94d5085d4f31.png)
+
+  
+  ### ClusterIp
+  * Are ip addresse in pods static? No they can change, especially when pods are killed and recreated
+  * Internal communication only: Group pods to a service.
+  * Backend pod need to talk to front-end pod => Go through Cluster IP 
+  
+  ![image](https://user-images.githubusercontent.com/29054168/228687919-69c0dce4-471a-49aa-89a4-cf87792a6885.png)
+
   
  ## Exec it
   
