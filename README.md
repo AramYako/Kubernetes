@@ -693,6 +693,13 @@ Several nodes: The service NodePort will reach out to all nodes
   ![image](https://user-images.githubusercontent.com/29054168/228687919-69c0dce4-471a-49aa-89a4-cf87792a6885.png)
 
   
+  ## Load balanser
+  
+  * Using NodePort is not good, since we expose ports. Hence in production, we should not use NodePort. Instead we should use Ingress or LoadBalanser from cloud providers 
+  
+  ![image](https://user-images.githubusercontent.com/29054168/228964864-a0b52243-91bb-4b1b-8049-6f5ebe2198f7.png)
+
+  
  ## Exec it
   
   * To view a log file in a pod 
