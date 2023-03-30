@@ -659,7 +659,7 @@ When a change happends in the spec.pod section a new revision is created for the
 * Inside node: Can we ssh a pod? Yes inside we can
 * Outside the node, how do we access the pods? Yes service: NodePort service. It will listen to a port, forward the request to a port that a pod listens to
 * ServiceTypes: NodePort, ClusterIP, LoadBalanser
-
+* We can also use Service to talk to an external DB
 
 ### NodePort
 
