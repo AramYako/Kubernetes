@@ -641,17 +641,6 @@ When a change happends in the spec.pod section a new revision is created for the
 
 * Rollout: Destory one pod and recreate it. Does that for all pods. This is default
 * ReCreate: Destory all pods and re-create them. We do have a period of unresponsiveness
-
-## Tips for exam
-
-## Modify existing resource
-```
-* Get resource YAML: kubectl get pod <name> -o yaml > pod.yaml
-* Delete old resource
-* Make changes
-* Apply new yaml
-```
-  
   
   
 ## Service
@@ -699,6 +688,83 @@ Several nodes: The service NodePort will reach out to all nodes
   
   ![image](https://user-images.githubusercontent.com/29054168/228964864-a0b52243-91bb-4b1b-8049-6f5ebe2198f7.png)
 
+
+
+
+## Ingress
+* Avoid us from opening port on the node to public
+* Can Ingress act as a load balanser? Yes and no, it need a underloying load balanser like NGINX, but will with that act as a load balanser 
+* We define routing rules in Type: Ingress: Yes
+* Request goes to  Ingress then Internal service, the the Internal serice (cluster IP mostly used) will forward request to pod/pods
+
+![image](https://user-images.githubusercontent.com/29054168/229356472-9605f0a4-999b-4b94-86db-de635f53ccaa.png)
+
+
+* Here is an exampel where ingress send all traffic to one internal service
+
+![image](https://user-images.githubusercontent.com/29054168/229357265-9a860486-2053-4c5c-8a17-4f4f8d1612e1.png)
+
+
+![image](https://user-images.githubusercontent.com/29054168/229360341-d510b7c2-28e4-4167-bc48-7ec08423b9da.png)
+
+### Host
+* DNS name or ip address 
+
+![image](https://user-images.githubusercontent.com/29054168/229361088-4b95f670-8afc-450c-9a04-fff999951a49.png)
+
+
+![image](https://user-images.githubusercontent.com/29054168/229359770-95437e86-3086-441a-980a-ca71395c3f00.png)
+
+### PathType
+
+![image](https://user-images.githubusercontent.com/29054168/229360249-92116b65-5fd3-454c-9d62-cb6c58e7ccc3.png)
+
+### Service Name/port
+* Service.Name = ServiceName ( the internal service)
+* Service.Port.Number: ServicePort
+
+
+### Ingress Controller
+* Is it enough to create ingress resource to use ingress? No, we also need ingress controller
+* What ingress controlers does kubernetes support and maintain? AWS, GCE and Nginx
+* Can we have several ingress controllers? Yes
+* ingressClassName: If we use several ingress controller, we need to specify: "ingressClassName". We can specifu which controller to handle  the traffic for specirfic resource. For exampel some for http and some for TCP. 
+* Evalutate the rules in the cluster: We can have several Ingress object in the cluster. The Ingress controll should look into the ingress rules and route trafic based on that. So the entry point is "Ingress Controller" 
+
+
+![image](https://user-images.githubusercontent.com/29054168/229361880-03fd8e13-5198-494c-a2d6-f942c634da8e.png)
+
+
+### Install
+1) Choose load balanser like NGINX
+2) Create a deployment file 
+3) Add args where the binary file for ingress is
+
+![image](https://user-images.githubusercontent.com/29054168/229369634-1d664bf2-6765-4796-982e-76f6fe50f5e6.png)
+
+
+
+![image](https://user-images.githubusercontent.com/29054168/229367441-3a5b94fe-c544-4ac2-b435-17f39ed52b95.png)
+
+
+
+![image](https://user-images.githubusercontent.com/29054168/229367446-cef7d84f-a528-4e1a-ab72-a1dcc151da94.png)
+
+
+
+
+
+
+## Tips for exam
+
+## Modify existing resource
+```
+* Get resource YAML: kubectl get pod <name> -o yaml > pod.yaml
+* Delete old resource
+* Make changes
+* Apply new yaml
+```
+  
   
  ## Exec it
   
