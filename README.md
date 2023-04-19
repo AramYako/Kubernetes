@@ -171,6 +171,7 @@
   * Expose a pod clusteriå --expose
   * kubbectl replace --force -f temp file
   * Multi container -it how to  choose which container
+  * Ingress controller nginx and one more
 
 ## Kubernetes Locally
 
