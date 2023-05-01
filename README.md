@@ -752,7 +752,11 @@ Several nodes: The service NodePort will reach out to all nodes
 ![image](https://user-images.githubusercontent.com/29054168/229367446-cef7d84f-a528-4e1a-ab72-a1dcc151da94.png)
 
 
+#Docker imporant commands
+```
+docker images | tail -n +2 | wc -l  //Get images, start 2 line (skip header)| word count -lines
 
+```
 
 
 
