@@ -755,7 +755,8 @@ Several nodes: The service NodePort will reach out to all nodes
 #Docker imporant commands
 ```
 docker images | tail -n +2 | wc -l  //Get images, start 2 line (skip header)| word count -lines
-
+docker build -t name:tag -f Dockerfile .
+docker run -p 8383:8080 webapp-color:lite 
 ```
 
 
