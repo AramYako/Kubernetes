@@ -760,6 +760,14 @@ docker run -p 8383:8080 webapp-color:lite
 ```
 
 
+# KubeConfig
+
+Default directory: $Home/.kube/config
+Environemnt variable: KUBECONFIG 
+Specify in request --kubeconfig=/root/folder/config
+kubectl config --kubeconfig=/root/my-kube-config use-context research
+Set environment variable: export KUBECONFIG=/root/my-kube-config
+
 
 ## Tips for exam
 
@@ -769,6 +777,7 @@ docker run -p 8383:8080 webapp-color:lite
 * Delete old resource
 * Make changes
 * Apply new yaml
+
 ```
   
   
