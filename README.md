@@ -776,7 +776,15 @@ Set environment variable: export KUBECONFIG=/root/my-kube-config
 ```
 * curl: http://localhost:8001/version
 * curl http://localhost:8001/api/v1/namespaces/default/pods
+
+* Curl all paths: curl http://localhost:8001
+* curl http://localhost:8001/apis | grep "name"
 ```
+
+# Authorization
+
+* We need to set authorization mode on the kube-api-server
+* authorization-mode=Node,RBAC, Webhook (first Node will authorize, if it fails => RBAC if it fails =>  Webhook
 
 ## Tips for exam
 
