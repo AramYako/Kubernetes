@@ -769,6 +769,15 @@ kubectl config --kubeconfig=/root/my-kube-config use-context research
 Set environment variable: export KUBECONFIG=/root/my-kube-config
 
 
+# Curl
+
+1) Set up proxy: kubectl proxy
+2) New command window and query 
+```
+* curl: http://localhost:8001/version
+* curl http://localhost:8001/api/v1/namespaces/default/pods
+```
+
 ## Tips for exam
 
 ## Modify existing resource
