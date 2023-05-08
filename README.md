@@ -786,6 +786,27 @@ Set environment variable: export KUBECONFIG=/root/my-kube-config
 * We need to set authorization mode on the kube-api-server
 * authorization-mode=Node,RBAC, Webhook (first Node will authorize, if it fails => RBAC if it fails =>  Webhook
 
+  
+# API resouces
+  
+### See api groups
+```
+* curl http://localhost:8001/
+```
+### See resources for core API group and its Verbs
+ 
+```
+  kubectl api-resources --api-group="" -o wide
+```
+  
+### See what api group resource belong to
+  
+```
+```
+  
+  
+  
+  
 ## Tips for exam
 
 ## Modify existing resource
