@@ -805,7 +805,25 @@ Set environment variable: export KUBECONFIG=/root/my-kube-config
 ```
   
   
+# RBAC
   
+ * Kind RBAC: Role and ClusterRole 
+ * Kind Bind RBAC: RoleBinding and ClusterRoleBinding
+  
+ ```
+  Role in namespace A: We need Rolebinding in namespace A 
+  RoleBiding can bind ClusterRole. Then we can reuse that clusterrole in all namespaces. So we dont need many Roles in different namespaces
+  ClusterRole can also bind ClusterRole. Then we can assign access to many namespaces
+ ```
+  ### Role and RoleBindings commands
+ ```
+  kubectl get roles 
+  kubectl get rolebindings
+  kubectl describe role <rolename>
+  kubectl describe roledefinition <definitionname>
+  kubectl edit role <rolename>
+  kubectl edit roledefinition <definitionname>
+ ```
   
 ## Tips for exam
 
