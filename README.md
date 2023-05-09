@@ -786,6 +786,7 @@ Set environment variable: export KUBECONFIG=/root/my-kube-config
 * We need to set authorization mode on the kube-api-server
 * authorization-mode=Node,RBAC, Webhook (first Node will authorize, if it fails => RBAC if it fails =>  Webhook
 
+* See authorization mode in cluster: kubectl edit pod kube-apiserver-controlplane -n kube-system: Check autorization_mode
   
 # API resouces
   
@@ -823,7 +824,23 @@ Set environment variable: export KUBECONFIG=/root/my-kube-config
   kubectl describe roledefinition <definitionname>
   kubectl edit role <rolename>
   kubectl edit roledefinition <definitionname>
+  
+  Check can you auth: kubectl auth can-i create deployments --namespace dev
+  Check as admin if user can: kubectl auth can-i user1 create deployments --namespace dev --as user1
+
  ```
+  
+  
+  To figure out what API group a resource belongs to
+  
+  * kubectl api-resources
+
+Version v1 = group ""
+version apps/v1 = group "apps"
+  
+  ![image](https://github.com/AramYako/Kubernetes/assets/29054168/4f894d66-c151-47b2-9f00-f7f7417af048)
+
+  
   
 ## Tips for exam
 
