@@ -164,6 +164,25 @@
         <li> <a href="#clusterip">ClusterIp</li>
       </ul>
     </li>
+    <li>
+      <a href="#kubeconfig">KubeConfig</a>
+    </li>
+    <li>
+      <a href="#curl">Curl</a>
+    </li>
+    <li>
+      <a href="#authorization">Authorization</a>
+    </li>
+    <li>
+      <a href="#api-resouces">API resouces</a>
+       <ul>
+        <li> <a href="#see-api-groups">See api groups</a></li>
+      </ul>
+      <a href="#api-resouces">API resouces</a>
+       <ul>
+        <li> <a href="#see-resources-for-core-api-group-and-its-verbs"> See resources for core API group and its Verbs</a></li>
+      </ul>
+    </li>
 </details>
   
 # To Learn
@@ -808,6 +827,9 @@ Set environment variable: export KUBECONFIG=/root/my-kube-config
   
 # RBAC
   
+  ## Info
+  
+  ### Kind
  * Kind RBAC: Role and ClusterRole 
  * Kind Bind RBAC: RoleBinding and ClusterRoleBinding
   
@@ -830,6 +852,7 @@ Set environment variable: export KUBECONFIG=/root/my-kube-config
 
  ```
   
+  ### Resource api group
   
   To figure out what API group a resource belongs to
   
@@ -840,6 +863,9 @@ version apps/v1 = group "apps"
   
   ![image](https://github.com/AramYako/Kubernetes/assets/29054168/4f894d66-c151-47b2-9f00-f7f7417af048)
 
+  
+##ClusterRole
+  
   
   
 ## Tips for exam
