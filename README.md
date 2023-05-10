@@ -882,9 +882,25 @@ version apps/v1 = group "apps"
   ![image](https://github.com/AramYako/Kubernetes/assets/29054168/4f894d66-c151-47b2-9f00-f7f7417af048)
 
   
-##ClusterRole
+## ClusterRole 
+* For cluster access
+* Access to resources not bound to namespace (node, PV, clusterRoles) 
+* To see resources not bound to namespace run "kubectl api-resources --namespaced=false
   
+  ![image](https://github.com/AramYako/Kubernetes/assets/29054168/61ce1e45-d797-4323-a12e-daf5ee636caa)
+
+  ```
+  Create: Kubectl create clusterrole
+  Delete: kubectl delete clusterrole
+  Get:     kubectl get clusterrole
   
+  ```
+  
+## Cluster role bindings
+  
+  ```
+  Get: kubectl get clusterrolebindings
+  ```
   
 ## Tips for exam
 
