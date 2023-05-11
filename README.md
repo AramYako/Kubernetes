@@ -902,6 +902,17 @@ version apps/v1 = group "apps"
   Get: kubectl get clusterrolebindings
   ```
   
+  
+  
+ 
+## Admission controller
+
+  * Pipline, performce after authentication and authorization
+  
+![image](https://github.com/AramYako/Kubernetes/assets/29054168/93a13f08-c4fc-42a0-99a1-84b706821c6b)
+
+  
+  
 ## Tips for exam
 
 ## Modify existing resource
