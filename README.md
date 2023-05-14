@@ -209,6 +209,7 @@
   * kubbectl replace --force -f temp file
   * Multi container -it how to  choose which container
   * Ingress controller nginx and one more
+  * * Kube api server for exampel enable adminssion controller (kube-apiserver --enable-admission-plugins=NamespaceLifecycle,LimitRanger ...) 
 
 ## Kubernetes Locally
 
@@ -910,6 +911,32 @@ version apps/v1 = group "apps"
   * Pipline, performce after authentication and authorization
   
 ![image](https://github.com/AramYako/Kubernetes/assets/29054168/93a13f08-c4fc-42a0-99a1-84b706821c6b)
+  
+  
+ ### default adminssion controllers
+  * AlwaysPullImage
+  * NamespaceExist error if ns doesnt exist
+  
+  
+  ### Exampels for adminssion controllers
+  * NamespaceAutoProvision (Create ns if it doesnt exist) 
+  
+  
+  ### command api-server
+  * Eiter go to yaml file 
+  * cd .. 
+  * cd ctc
+  cd kubernetes
+  cd manifests
+  vim kube api yaml file
+  
+  ```
+  * kube-apiserver --disable-admission-plugins=PodNodeSelector,AlwaysDeny ...
+  * kube-apiserver -h | grep enable-admission-plugins
+
+  * or view pod -n kube-system pod kube-apiserver-controlplane
+  
+  ```
 
   
   
