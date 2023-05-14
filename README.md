@@ -909,6 +909,10 @@ version apps/v1 = group "apps"
 ## Admission controller
 
   * Pipline, performce after authentication and authorization
+  * 2 types of admission controllers: Validation and mutation
+  * Validation: Validate something
+  * Mutation: Mutate something
+  * Mutatiuon is performed before validation admission
   
 ![image](https://github.com/AramYako/Kubernetes/assets/29054168/93a13f08-c4fc-42a0-99a1-84b706821c6b)
   
@@ -923,21 +927,19 @@ version apps/v1 = group "apps"
   
   
   ### command api-server
-  * Eiter go to yaml file 
-  * cd .. 
-  * cd ctc
-  cd kubernetes
-  cd manifests
-  vim kube api yaml file
+  
+  * To view enabled admission pluginx: kubectl exec -it kube-apiserver-controlplane -n kube-system **-- kube-apiserver -h | grep enable-admission-plugins**
   
   ```
   * kube-apiserver --disable-admission-plugins=PodNodeSelector,AlwaysDeny ...
-  * kube-apiserver -h | grep enable-admission-plugins
-
   * or view pod -n kube-system pod kube-apiserver-controlplane
   
   ```
 
+  
+  ## Validatating and mutatation webhook
+  
+  
   
   
 ## Tips for exam
